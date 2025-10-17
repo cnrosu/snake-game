@@ -60,6 +60,7 @@ class Snake:
     def __init__(self, initial_positions: Iterable[Point], direction: Direction) -> None:
         self.body: List[Point] = list(initial_positions)
         self.direction = direction
+        self.next_direction = direction
         self.grow_pending = 0
 
     @property
@@ -69,9 +70,10 @@ class Snake:
     def turn(self, direction: Direction) -> None:
         if direction == self.direction or direction == self.direction.opposite():
             return
-        self.direction = direction
+        self.next_direction = direction
 
     def move(self) -> None:
+        self.direction = self.next_direction
         new_head = self.head + self.direction.vector
         self.body.insert(0, new_head)
         if self.grow_pending > 0:
