@@ -1,6 +1,6 @@
 # Snake Game
 
-A simple snake game implemented with [pygame](https://www.pygame.org/).
+A simple snake game implemented with [pygame-ce](https://pyga.me/).
 
 ## Getting started
 
@@ -10,6 +10,12 @@ A simple snake game implemented with [pygame](https://www.pygame.org/).
    ```bash
    pip install -r requirements.txt
    ```
+
+   > **Note for Windows / Python 3.12 users:** The classic `pygame` package
+   > still depends on `distutils`, which was removed in Python 3.12. This
+   > project instead relies on the drop-in replacement `pygame-ce`, which
+   > provides prebuilt wheels for modern Python versions and avoids the
+   > missing `distutils` error during installation.
 
 3. Run the game:
 

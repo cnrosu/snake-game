@@ -43,7 +43,7 @@ class Direction(Enum):
         return mapping[self]
 
 
-@dataclass
+@dataclass(frozen=True)
 class Point:
     x: int
     y: int
